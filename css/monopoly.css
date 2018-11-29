@@ -183,6 +183,15 @@ body{
     width: 25%;
 }
 
+
+/* Added a sad face to jailed player */
+.player.jailed {
+    background-image: url(../images/sad.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .player#player1 , .player1.cell .content {
     background-color: #389c36;
 }
