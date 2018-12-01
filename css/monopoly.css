@@ -208,10 +208,26 @@ body{
     background-color: #d061cd;
 }
 
+.player#player5 , .player5.cell .content{
+    background-color: #ed1b24;
+}
+
+.player#player6 , .player6.cell .content{
+    background-color: #fef200;
+}
+
 .player.current-turn{
     background-image:url(../images/crown.png);
     background-size:contain;
     background-position:center;
+}
+
+/* Adds a smiley face when player stands on his own property */
+.player1 #player1 {
+    background-image:url(../images/happy.png);
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
 }
 
 .board .dice.cell{
@@ -223,11 +239,15 @@ body{
     width: 25%;
     height: 25%;
     margin: 4%;
-    background-color: black;
+    background-color: #364c9c;          /* Fixed the color of dice dots */
     border-radius: 100px;
     opacity:0;
 }
 
 .dice-dot.right{
     margin-left:36%;
+}
+
+.broke {
+    display: none;
 }
