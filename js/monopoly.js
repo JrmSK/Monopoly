@@ -1,6 +1,6 @@
 var Monopoly = {};
 Monopoly.allowRoll = true;
-Monopoly.moneyAtStart = 100;        // changed the amount of money received at beginning 
+Monopoly.moneyAtStart = 15;        // changed the amount of money received at beginning 
 Monopoly.doubleCounter = 0;
 
 
@@ -116,7 +116,13 @@ Monopoly.setNextPlayerTurn = function () {
     var playerId = parseInt(currentPlayerTurn.attr("id").replace("player", ""));
     var playersList = $(".player");
     var brokeList = $(".broke");
-    if (Monopoly.doubleCounter > 0 && !currentPlayerTurn.is(".jailed")) {           // will give a player the ability to roll the dice again after a double 
+    if (playersList.length - brokeList.length === 1) {
+        var popup = Monopoly.getPopup('win');                // win popup is displayed
+        popup.find('button').unbind('click').bind('click', location.reload());
+        var displayWin = $('#text-placeholder');
+        displayWin.text(`Player ${playerId} won the game!`)
+        Monopoly.showPopup('win');
+    } else if (Monopoly.doubleCounter > 0 && !currentPlayerTurn.is(".jailed")) {           // will give a player the ability to roll the dice again after a double 
         var nextPlayerId = playerId;
     } else {
         var nextPlayerId = playerId + 1;
