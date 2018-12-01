@@ -95,7 +95,9 @@ Monopoly.movePlayer = function (player, steps) {
 Monopoly.handleTurn = function () {
     var player = Monopoly.getCurrentPlayer();
     var playerCell = Monopoly.getPlayersCell(player);
-    if (playerCell.is(".available.property")) {
+    if (Monopoly.doubleCounter === 3) {             // put player in jail if he make a triple double
+        Monopoly.handleGoToJail(player);
+    } else if (playerCell.is(".available.property")) {
         Monopoly.handleBuyProperty(player, playerCell);
     } else if (playerCell.is(".property:not(.available)") && !playerCell.hasClass(player.attr("id"))) {
         Monopoly.handlePayRent(player, playerCell);
