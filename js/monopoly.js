@@ -1,6 +1,6 @@
 var Monopoly = {};
 Monopoly.allowRoll = true;
-Monopoly.moneyAtStart = 15;        // changed the amount of money received at beginning 
+Monopoly.moneyAtStart = 100;        // changed the amount of money received at beginning 
 Monopoly.doubleCounter = 0;
 
 
